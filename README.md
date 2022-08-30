@@ -38,3 +38,8 @@ Given Account and Source tables, write SQL scripts to transform:
 
 ### Expected Output
 | account_name | utm_source | utm_medium |
+| --- | --- | --- |
+| aaa | facebook | cpc |
+| bbb | google | cpc |
+| ccc | google | cpc |
+| ddd | twitter |  |
