@@ -91,4 +91,4 @@ LEFT JOIN accounts ON exp_out.account_id = accounts.account_id
 ```
 
 ## Screenshot of output
-[screen_shot_sql](../figures/screen_shot_sql.png)
+![screen_shot_sql](../figures/screen_shot_sql.png)
