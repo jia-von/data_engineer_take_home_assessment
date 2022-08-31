@@ -1,27 +1,22 @@
-/* 
-Background: 
-- PostgreSQL syntax was used to complete this exercise
-- snake_case is used as nomenclature for this exercise
+# SQL Assignment
+Use SQL to solve this problem. We are evaluating this from the lens that this is your best possible code.
 
-Problem:
+## Problem:
 Given Account and Source tables, write SQL scripts to transform:
     1. When an account's utm_name = 'utmcsr', output its utm_value in a column called utm_source
     2. When an account's utm_name = 'utmcmd', output its utm_value in a column called utm_medium
 
-Setup:
+## Setup:
+PostgreSQL syntax and snake_case is used as nomenclature for this exercise.
 1. PostgreSQL database was deployed locally to recreate the tables provided by Jobber.
 2. Create tables 'accounts' and 'sources'. 
 3. Insert data into the tables.
-4. Create primary and foreign key.
-    Note: No explicit instruction was given in the exercise in regards to making relational database. Therefore an assumption was made based on my personal experience that 'accounts' table will be most suited to have primary key in this scenario. 
-5. Create a SQL query that will produce an output similar to 'expected output'
-    Note: No explicit instruction that I would need to create an 'expected output' table. Therefore, the solution for this exercise is a SQL query. 
-*/
+4. Create primary and foreign key. Note: No explicit instruction was given in the exercise in regards to making relational database. Therefore an assumption was made based on my personal experience that 'accounts' table will be most suited to have primary key in this scenario. 
+5. Create a SQL query that will produce an output similar to 'expected output'. Note: No explicit instruction that I would need to create an 'expected output' table. Therefore, the solution for this exercise is a SQL query. 
 
--- Step 1 out of 5: Create a database with schema 'public'. 
-
--- Step 2 out of 5: Re-create the table named 'accounts' and 'sources'
-
+## Solution
+### Re-create the table named 'accounts' and 'sources'
+```sql
 CREATE TABLE public.accounts (
 	account_id int NULL,
 	account_name varchar NULL
@@ -32,9 +27,10 @@ CREATE TABLE public.sources (
 	utm_name varchar NULL,
 	utm_value varchar NULL
 );
+```
 
--- Step 3 out of 5: Insert data into tables. 
-
+### Insert data into tables. 
+```sql
 INSERT INTO public.accounts (account_id,account_name)
 	VALUES (226,'aaa');
 INSERT INTO public.accounts (account_id,account_name)
@@ -43,7 +39,6 @@ INSERT INTO public.accounts (account_id,account_name)
 	VALUES (598,'ccc');
 INSERT INTO public.accounts (account_id,account_name)
 	VALUES (999,'ddd');
-
 
 INSERT INTO public.sources (account_id,utm_name,utm_value)
 	VALUES (226,'utmcsr','facebook');
@@ -59,16 +54,15 @@ INSERT INTO public.sources (account_id,utm_name,utm_value)
 	VALUES (598,'utmcsr','google');
 INSERT INTO public.sources (account_id,utm_name,utm_value)
 	VALUES (999,'utmcsr','twitter');
-
--- Step 4 out of 5: Add primary and foreign keys. 
-
+```
+### Add primary and foreign keys. 
+```sql
 ALTER TABLE public.accounts ADD CONSTRAINT accounts_pk PRIMARY KEY (account_id);
 
 ALTER TABLE public.sources ADD CONSTRAINT sources_fk FOREIGN KEY (account_id) REFERENCES public.accounts(account_id);
-
-
--- Step 5 out of 5: SQL queries to re-create 'expected output'
-
+```
+### SQL queries to re-create 'expected output'
+```sql
 SELECT DISTINCT account_name, utm_source, utm_medium 
 FROM
     (
@@ -94,5 +88,7 @@ FULL OUTER JOIN
         ON utm_s.account_id = utm_m.account_id
     ) AS exp_out
 LEFT JOIN accounts ON exp_out.account_id = accounts.account_id
+```
 
--- Refer to figures/screen_shot_sql.png for screen shot of the expected output. 
+## Screenshot of output
+[screen_shot_sql](../figures/screen_shot_sql.png)
