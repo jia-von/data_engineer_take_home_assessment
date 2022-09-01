@@ -1,12 +1,12 @@
-# Setup:
-# Change directory into `scripting` so you can execute `farm_function.py` script function.
-# farm_api.json was created to replicate an array of JSON objects containing Farm API data.
+# Scripting
+## Setup:
+1. Change directory into `scripting` so you can execute `farm_function.py` script function.
+2. `farm_api.json` was created to replicate an array of JSON objects containing Farm API data.
+3. Example to execute `farm_function.py` in shell: `$ python farm_function.py`
 
-# Import json module library
-import json
-
-
-# Create a function that accepts arguments, JSON object as strings.
+## Python script function
+Create a function that accepts arguments, JSON object as strings.
+```python
 def api_input(json_object_input):
 
     # Parse JSON string and this will result in Python dictionary data. Refer: https://www.w3schools.com/python/python_json.asp
@@ -41,21 +41,81 @@ def api_input(json_object_input):
     # Convert Python objects into JSON string using 'json.dumps()' method and format the string with idents to produce easy to read format.
     # Refer: https://www.w3schools.com/python/python_json.asp
     print(json.dumps(api_output, indent=4))
+```
 
-# Example 1. The use of 'api_input()' function with the given JSON objects.
-# [{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]
-print('Example 1. output:')
+# Example 1. 
+The use of `api_input()` function with the given JSON objects.
+- JSON objects: `[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]`
+```python
 api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]')
-input('Press Enter to continue...')
+```
+Output:
+```json
+Example 1. output:
+[
+    {
+        "name": "Pig",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Cow",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Chicken",
+        "inventory_level": "None"
+    },
+    {
+        "name": "Dog",
+        "inventory_level": "Low"
+    }
+]
+Press Enter to continue...
 
+```
 
-# Example 2. The use of 'api_input()' function with two additional objects. 
-# [{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]
-print('Example 2. output:')
+# Example 2. 
+The use of `api_input()` function with two additional objects. 
+- JSON objects: `[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]`
+```python
 api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]')
-input('Press Enter to continue...')
+```
+Output:
+```json
+Example 2. output:
+[
+    {
+        "name": "Pig",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Cow",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Chicken",
+        "inventory_level": "None"
+    },
+    {
+        "name": "Dog",
+        "inventory_level": "Low"
+    },
+    {
+        "name": "Donkey",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Cat",
+        "inventory_level": "Normal"
+    }
+]
+Press Enter to continue...
+```
 
-# Example 3. The function below uses JSON object file instead of string.
+# Example 3. 
+The function below uses JSON object file instead of string.
+- File input: `farm_api.json`.
+```python
 def api_input_json_file(api_file):
 
     # Assuming the file is saved in the same directory as farm_function.py script. I open the file using 'open()' function.
@@ -63,6 +123,31 @@ def api_input_json_file(api_file):
 
     # Re-using 'api_input()' function defined previously.
     api_input(farm_api_file.read())
-print('Example 3. output:')
+```
+Example use of `api_input_json_file()`:
+```python
 api_input_json_file("farm_api.json")
-input('Press Enter to end...')
+```
+Output:
+```json
+Example 3. output:
+[
+    {
+        "name": "Pig",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Cow",
+        "inventory_level": "Normal"
+    },
+    {
+        "name": "Chicken",
+        "inventory_level": "None"
+    },
+    {
+        "name": "Dog",
+        "inventory_level": "Low"
+    }
+]
+Press Enter to end...
+```
