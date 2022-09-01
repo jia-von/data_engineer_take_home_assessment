@@ -21,15 +21,14 @@ while i < 4:
     if x < 1:
         api_output[i].update({"inventory_level": "None"})
         api_output[i].pop("inventory")
-        print (api_output[i])
         i += 1
     elif x > 2:
         api_output[i].update({"inventory_level": "Normal"})
         api_output[i].pop("inventory")
-        print (api_output[i])
         i += 1
     else: 
         api_output[i].update({"inventory_level": "Low"})
         api_output[i].pop("inventory")
-        print (api_output[i])
         i += 1
+
+print(json.dumps(api_output))
