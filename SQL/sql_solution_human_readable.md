@@ -11,7 +11,7 @@ PostgreSQL syntax and snake_case is used as nomenclature for this exercise.
 1. PostgreSQL database was deployed locally to recreate the tables provided by Jobber.
 2. Create tables 'accounts' and 'sources'. 
 3. Insert data into the tables.
-4. Create primary and foreign key. Note: No explicit instruction was given in the exercise in regards to making relational database. Therefore an assumption was made based on my personal experience that 'accounts' table will be most suited to have primary key in this scenario. 
+4. Create primary and foreign key. Note: No explicit instruction was given in the exercise in regards to making relational database. Therefore an assumption was made based on one to many relationship, from 'accounts' to 'sources'.
 5. Create a SQL query that will produce an output similar to 'expected output'. Note: No explicit instruction that I would need to create an 'expected output' table. Therefore, the solution for this exercise is a SQL query. 
 
 ## Solution

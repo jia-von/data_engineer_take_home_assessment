@@ -43,14 +43,12 @@ def api_input(json_object_input):
     print(json.dumps(api_output, indent=4))
 
 # Example 1. The use of 'api_input()' function with the given JSON objects.
-# [{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]
 print('Example 1. output:')
 api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]')
 input('Press Enter to continue...')
 
 
 # Example 2. The use of 'api_input()' function with two additional objects. 
-# [{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]
 print('Example 2. output:')
 api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]')
 input('Press Enter to continue...')

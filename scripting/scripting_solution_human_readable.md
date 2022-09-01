@@ -2,7 +2,10 @@
 ## Setup:
 1. Change directory into `scripting` so you can execute `farm_function.py` script function.
 2. `farm_api.json` was created to replicate an array of JSON objects containing Farm API data.
-3. Example to execute `farm_function.py` in shell: `$ python farm_function.py`
+3. Example command to execute `farm_function.py` in shell: 
+```bash
+python farm_function.py
+```
 
 ## Python script function
 Create a function that accepts arguments, JSON object as strings.
