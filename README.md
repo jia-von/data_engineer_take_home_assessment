@@ -28,7 +28,7 @@ data_engineer_take_home_assessment
 All solutions to the SQL assessment are found in directory `SQL`. You may copy and paste queries from `sql_solution.sql` in a PostgreSQL database. 
 
 ## Scripting
-All aolutions for the scripting assessment are found in `scripting` directory. You may test the Python script.
+All solutions for the scripting assessment are found in `scripting` directory. You may test the Python script.
 ```bash
 $ cd scripting
 
