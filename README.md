@@ -21,14 +21,14 @@ data_engineer_take_home_assessment
     |-- farm_function.py (Python script function)
     |-- scripting_solution_human_readable.md
 |-- SQL
-    |-- sql_solution_human_redable.md
+    |-- sql_solution_human_readable.md
     |-- sql_solution.sql (SQL queries)
 ```
 ## SQL 
 All solutions to the SQL assessment are found in directory `SQL`. You may copy and paste queries from `sql_solution.sql` in a PostgreSQL database. 
 
 ## Scripting
-All aolutions for the scripting assessment are found in `scripting` directory. You may test the Python script.
+All solutions for the scripting assessment are found in `scripting` directory. You may test the Python script.
 ```bash
 $ cd scripting
 
