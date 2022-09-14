@@ -39,6 +39,22 @@ $ python farm_function.py
 ## Architecture
 `architecture` directory contains no code therefore no commands or setup required. 
 
+### Quote
+>- Modern applications generate a large amount and variety of data, across many systems.
+>- This data, if harnessed, can be a strategic and tactical asset.
+>- Please speak to the design of a data pipeline that would facilitate getting value from such data.
+>- Some elements we would like to hear about include:
+>1. Extraction, transformation, loading and integration
+>2. Enrichment and extension (semantic layer)
+>3. Mitigating risk / single source of truth
+>4. Scalability, availability and security
+>5. Orchestration / workflow / performance
+>6. Monitoring (failure, optimization, etc.)
+
+### Analysis
+- In my experience writing technical report (if you are referring to other data scientist and engineers), I wouldn't use the word **tactical asset** to describe data, because it mostly defined for military uses. *relating to or constituting actions carefully planned to gain a specific military end.* Reword: **Enriched data can be important asset...**
+- 
+
 # Background Review
 ## Quote Email and Delaney
 >- Part of our technical interview process here at Jobber is that we have candidates submit a solution to the problem attached. The solution is used to help us understand your approach to problem solving, testing, and commenting. Please review and let me know when you can have it completed by!

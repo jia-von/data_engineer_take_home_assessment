@@ -10,6 +10,7 @@ import json
 def api_input(json_object_input):
 
     # Parse JSON string and this will result in Python dictionary data. Refer: https://www.w3schools.com/python/python_json.asp
+    # Refector September 14, 2022:
     api_output = json.loads(json_object_input)
 
     # Calculate the length of an array to be used with the 'while' loop command below. Dynamically generated values allow functions to be reused. 
@@ -43,15 +44,15 @@ def api_input(json_object_input):
     print(json.dumps(api_output, indent=4))
 
 # Example 1. The use of 'api_input()' function with the given JSON objects.
-print('Example 1. output:')
-api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]')
-input('Press Enter to continue...')
+# print('Example 1. output:')
+# api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}]')
+# input('Press Enter to continue...')
 
 
 # Example 2. The use of 'api_input()' function with two additional objects. 
-print('Example 2. output:')
-api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]')
-input('Press Enter to continue...')
+# print('Example 2. output:')
+# api_input('[{"name": "Pig", "inventory": 3}, {"name": "Cow", "inventory": 4}, {"name": "Chicken", "inventory": -1}, {"name": "Dog", "inventory": 1}, {"name": "Donkey", "inventory": 6}, {"name": "Cat", "inventory": 4}]')
+# input('Press Enter to continue...')
 
 # Example 3. The function below uses JSON object file instead of string.
 def api_input_json_file(api_file):
@@ -61,6 +62,7 @@ def api_input_json_file(api_file):
 
     # Re-using 'api_input()' function defined previously.
     api_input(farm_api_file.read())
-print('Example 3. output:')
-api_input_json_file("farm_api.json")
-input('Press Enter to end...')
+# print('Example 3. output:')
+# api_input_json_file('scripting/farm_api.json')
+# input('Press Enter to end...')
+

@@ -1,4 +1,20 @@
-# Scripting
+# Background Review
+>Use any scripting programming language to solve this problem (eg. JS, Python, etc.). Demonstrate with tests that your solution is correct.
+>We are evaluating this from the lens that this is your best possible code.
+>Your objective is to transform data coming from the Farm API before loading it into your database
+>The data from the Farm API contains 2 fields:
+>- name
+>- inventory
+>Write a **script function** that should receive an array of JSON objects containing Farm API data.
+>The function should return an array of JSON with *inventory* values transformed as shown below
+and added to a field called *inventory_level*:
+>- 0 or less: None
+>- 1 or 2: Low
+>- 3 or more: Normal
+>- `[{name: 'Pig', inventory: 3}, {name: 'Cow', inventory: 4}, {name: 'Chicken', inventory: -1}, {name: 'Dog', inventory: 1}]`
+## Analysis
+- No clarification what kind of tests to do. No mentioned the ability to use library or not. 
+- **Script function** assume to be [python function](https://www.w3schools.com/python/python_functions.asp).
 ## Setup:
 1. Change directory into `scripting` so you can execute `farm_function.py` script function.
 2. `farm_api.json` was created to replicate an array of JSON objects containing Farm API data.
