@@ -1,10 +1,27 @@
-# SQL Assignment
-Use SQL to solve this problem. We are evaluating this from the lens that this is your best possible code.
+# Quote Assignment 
+>- Use SQL to solve this problem.
+>- We are evaluating this from the lens that this is your best possible code.
+>- Given Account and Source tables, write SQL scripts to transform:
+>1. When an account's utm_name = 'utmcsr', output its utm_value in a column called utm_source
+>2. When an account's utm_name = 'utmcmd', output its utm_value in a column called utm_medium
+## Analysis
+- Assume general SQL language and special libraries used. 
+    - If I do want to use special SQL syntax, i.e. PostgreSQL I have to give my technical reviewer information about the database I use.
+- No clarification whether it is a traditional SQL or noSQL database.
+- No foreign and primary key was noted, therefore I have to made assumption one-to-many relationship. 
+    -   There will difference in queries depending whether table have keys or not.
+- No clarification was given whether I should create a table or query them.
+    - Therefore I made assumption it is just to query. 
+- No clarification whether the expected output should be null
+    - Therefore assumption was made that it will be null for this case. 
+- **We are evaluating this from the lens that this is your best possible code.**
+    - What do you mean by **best posible code**, no references was given. 
+    - I had to made assumptions, is it according to commenting syntax/formating/queries resources/use of libraries/mathematical concept to explain result. 
+    - Best code can be long and verbose, and bad code can do exactly the same but it will be short and not be understood by other people. What are you seeking for?
 
-## Problem:
-Given Account and Source tables, write SQL scripts to transform:
-    1. When an account's utm_name = 'utmcsr', output its utm_value in a column called utm_source
-    2. When an account's utm_name = 'utmcmd', output its utm_value in a column called utm_medium
+## Mathematical Explanation 
+
+# SQL Assignment
 
 ## Setup:
 PostgreSQL syntax and snake_case is used as nomenclature for this exercise.
@@ -77,6 +94,8 @@ FROM
         ) AS utm_s
         -- Since account with the name account_name 'ddd' or account_id '999' do not have 'utmcmd' row, temporary tables 'utm_s' and 'utm_m' will have none matching rows. 
         -- Therefore, FULL OUTER JOIN was used to set NULL values for every column of the table that does not have the matching row
+        -- FULL OUTER JOIN to use the full join to find a row in a table that does not have a matching row in another table
+        -- It sets NULL values for columns of table that does not have the matching row
         -- Refer: https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-full-outer-join/
 FULL OUTER JOIN 
         (
@@ -87,6 +106,9 @@ FULL OUTER JOIN
         ) AS utm_m 
         ON utm_s.account_id = utm_m.account_id
     ) AS exp_out
+-- Left Join to select rows from one table that may or may not have corresponding rows in other table.
+-- In this case, the accounts table do not have number of rows exp_out table
+-- Refer: https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-left-join/
 LEFT JOIN accounts ON exp_out.account_id = accounts.account_id
 ```
 
